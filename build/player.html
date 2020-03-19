@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="./icon_192.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="manifest" href="readnow.webmanifest" />
+    <title>Reading Teacher</title>
+  </head>
+  <body class="introducing">
+    <header role="menubar">
+      <button
+        disabled
+        id="helpButton"
+        type="button"
+        aria-label="speak help instructions aloud"
+        title="speak help instructions aloud"
+      ></button>
+      <label id="help" for="helpButton"></label>
+      <button
+        disabled
+        id="decreaseGradeLevelButton"
+        type="button"
+        aria-label="decrease grade level"
+        title="decrease grade level"
+      ></button>
+      <label id="decreaseGradeLevel" for="decreaseGradeLevelButton"></label>
+      <button
+        disabled
+        id="increaseGradeLevelButton"
+        type="button"
+        aria-label="increase grade level"
+        title="increase grade level"
+      ></button>
+      <label id="increaseGradeLevel" for="increaseGradeLevelButton"></label>
+      <button
+        disabled
+        id="openPreferencesButton"
+        type="button"
+        aria-label="open preferences"
+        title="open preferences"
+      ></button>
+      <label id="openPreferences" for="openPreferencesButton"></label>
+      <dialog id="preferencesDialog">
+        <h2>Preferences</h2>
+        <form id="preferencesForm">
+          <div role="group" class="buttonGroup">
+            <input checked id="showSentencePreferenceRadio" type="radio" name="show" value="sentence">
+            <label id="showSentencePreference" for="showSentencePreferenceRadio"></label>
+            <input id="showParagraphPreferenceRadio" type="radio" name="show" value="paragraph">
+            <label id="showParagraphPreference" for="showParagraphPreferenceRadio"></label>
+          </div>
+          <div role="group" class="buttonGroup">
+            <button name="action" value="discard" id="discardPreferencesButton"
+              aria-label="discard preferences"
+              title="discard preferences"
+            ></button>
+            <label id="discardPreferences"for="discardPreferencesButton"></label>
+            <button name="action" value="save" id="savePreferencesButton"
+              aria-label="save preferences"
+              title="save preferences"
+            ></button>
+            <label id="savePreferences" for="savePreferencesButton"></label>
+          </div>
+        </form>
+      </dialog>
+    </header>
+    <main>
+      <div id="text"></div>
+      <menu>
+        <button
+          disabled
+          id="previousSentenceButton"
+          type="button"
+          aria-label="move back to the previous sentence"
+          title="move back to the previous sentence"
+        ></button>
+        <label id="previousSentence" for="previousSentenceButton"></label>
+        <button
+          disabled
+          id="speakButton"
+          type="button"
+          aria-label="speak the current sentence"
+          title="speak the current sentence"
+        ></button>
+        <label id="speak" for="speakButton"></label>
+        <button
+          disabled
+          id="nextSentenceButton"
+          type="button"
+          aria-label="move on to the next sentence"
+          title="move on to the next sentence"
+        ></button>
+        <label id="nextSentence" for="nextSentenceButton"></label>
+      </menu>
+    </main>
+    <div id="error">
+      <div id="errorMessage"></div>
+    </div>
+    <script defer src="polyfill-ie11.js"></script>
+    <script defer src="interactivity.js"></script>
+  </body>
+</html>
