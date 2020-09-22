@@ -128,14 +128,6 @@ var decreaseGradeLevelElem = (document.getElementById("decreaseGradeLevel"));
 /** @type {HTMLLabelElement} */
 var increaseGradeLevelElem = (document.getElementById("increaseGradeLevel"));
 /** @type {HTMLLabelElement} */
-var openPreferencesElem = (document.getElementById("openPreferences"));
-/** @type {HTMLDialogElement} */
-var preferencesDialogElem = (document.getElementById("preferencesDialog"));
-/** @type {HTMLButtonElement} */
-var discardPreferencesElem = (document.getElementById("discardPreferencesButton"));
-/** @type {HTMLButtonElement} */
-var savePreferencesElem = (document.getElementById("savePreferencesButton"));
-/** @type {HTMLLabelElement} */
 var previousSentenceElem = (document.getElementById("previousSentence"));
 /** @type {HTMLLabelElement} */
 var speakElem = (document.getElementById("speak"));
@@ -156,18 +148,6 @@ addClickAction(increaseGradeLevelElem, increaseGradeLevelAction);
 addClickAction(previousSentenceElem, previousSentenceAction);
 addClickAction(speakElem, speakAction);
 addClickAction(nextSentenceElem, nextSentenceAction);
-addClickAction(openPreferencesElem, openPreferencesAction);
-
-function openPreferencesAction() {
-  stopSounds();
-  preferencesDialogElem.showModal();
-}
-function closePreferencesAction(save = false) {
-  if (save) {
-
-  }
-  preferencesDialogElem.close();
-}
 
 var currentLevel = Infinity;
 var sentenceOffset = 0;
@@ -206,22 +186,8 @@ function disableInactiveButtons() {
   /** @type {HTMLButtonElement} */(document.getElementById(decreaseGradeLevelElem.getAttribute('for'))).disabled = (currentLevel - 1) in levels === false;
   /** @type {HTMLButtonElement} */(document.getElementById(increaseGradeLevelElem.getAttribute('for'))).disabled = (currentLevel + 1) in levels === false;
 }
-preferencesDialogElem.addEventListener("cancel", function (e) {
-  e.preventDefault();
-});
-discardPreferencesElem.addEventListener("click", function (e) {
-  e.preventDefault();
-  preferencesDialogElem.close();
-});
-savePreferencesElem.addEventListener("click", function (e) {
-  e.preventDefault();
-  let = savePreferencesElem.form.elements;
-  preferencesDialogElem.close();
-});
-document.body.addEventListener("keyup", function (e) {
-  if (preferencesDialogElem.open) {
-    return;
-  }
+
+window.addEventListener("keyup", function (e) {
   if (e.key === "Escape" || e.key === "Esc") {
     stopSounds();
   } else if (e.key === "ArrowLeft" || e.key === "Left") {

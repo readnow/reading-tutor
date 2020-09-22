@@ -2,8 +2,6 @@ html, body {
   padding: 0;
   margin: 0;
   overflow: auto;
-  width: 100%;
-  height: 100%;
 }
 * {
   box-sizing: border-box;
@@ -31,7 +29,7 @@ label {
   background-size: contain;
   margin-left: 10px; 
 }
-button, input {
+button {
   display: none;
 }
 :disabled + label {
@@ -84,69 +82,8 @@ icons from https://www.iconfinder.com/iconsets/freecns-cumulus and https://www.i
   float: right;
   background-image: url('img_preferences.svg');
 }
-#savePreferences {
-  background-color: #080;
-  background-image: url('img_accept.svg');
-}
-#discardPreferences{
-  background-color: red;
-  background-image: url('img_close.svg');
-}
-dialog::backdrop,
-dialog::-ms-backdrop {
-  background-color: rgba(128,128,128,0.5);
-}
-#preferencesDialog {
-  position: fixed;
-  margin: 0 auto;
-  padding: 1em;
-  top: 10%;
-  bottom: 10%;
-  width: 80%;
-}
-#closePreferencesButton {
-  display: block;
-}
 :checked + label {
-  background-color: royalblue;
-}
-.buttonGroup {
-  padding-top: 1em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid;
-  padding: 2px;
-  /* border-radius: 7px; */
-}
-.buttonGroup {
-  margin-top: 1em;
-}
-.buttonGroup > label {
-  margin: 0;
-  flex-grow: 1;
-  flex-basis: 40px;
-}
-.buttonGroup > label ~ label {
-  margin-left: 2px;
-}
-/* .buttonGroup > label:first-of-type {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-.buttonGroup > label:last-of-type {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-} */
-legend {
-  display: none;
-}
-#showParagraphPreference {
-  background-image: url('img_showParagraph.svg');
-}
-#showSentencePreference {
-  background-image: url('img_showSentence.svg');
+  background-color: cornflowerblue;
 }
 #decreaseGradeLevel {
   background-image: url('img_decreaseGradeLevel.svg');
